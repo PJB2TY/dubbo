@@ -17,12 +17,12 @@
 
 package org.apache.dubbo.common.constants;
 
-import org.apache.dubbo.common.URL;
-
 import java.net.NetworkInterface;
 import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.regex.Pattern;
+
+import org.apache.dubbo.common.URL;
 
 public interface CommonConstants {
     String DUBBO = "dubbo";
@@ -253,6 +253,14 @@ public interface CommonConstants {
      */
     String DUBBO_PREFERRED_NETWORK_INTERFACE = "dubbo.network.interface.preferred";
 
+    /**
+     * The property name for {@link NetworkInterface#getDisplayName() the name of network interface} that
+     * the Dubbo application will be ignored
+     *
+     * @since 2.7.6
+     */
+    String DUBBO_NETWORK_IGNORED_INTERFACE = "dubbo.network.interface.ignored";
+
     @Deprecated
     String SHUTDOWN_WAIT_SECONDS_KEY = "dubbo.service.shutdown.wait.seconds";
     String SHUTDOWN_WAIT_KEY = "dubbo.service.shutdown.wait";
@@ -305,6 +313,8 @@ public interface CommonConstants {
     String EXTRA_KEYS_KEY = "extra-keys";
 
     String GENERIC_SERIALIZATION_NATIVE_JAVA = "nativejava";
+
+    String GENERIC_SERIALIZATION_GSON = "gson";
 
     String GENERIC_SERIALIZATION_DEFAULT = "true";
 
@@ -379,11 +389,15 @@ public interface CommonConstants {
 
     String DEFAULT_VERSION = "0.0.0";
 
+    String CLASS_DESERIALIZE_OPEN_CHECK = "dubbo.security.serialize.openCheckClass";
+
     String CLASS_DESERIALIZE_BLOCK_ALL = "dubbo.security.serialize.blockAllClassExceptAllow";
 
     String CLASS_DESERIALIZE_ALLOWED_LIST = "dubbo.security.serialize.allowedClassList";
 
     String CLASS_DESERIALIZE_BLOCKED_LIST = "dubbo.security.serialize.blockedClassList";
+
+    String CLASS_DESERIALIZE_CHECK_SERIALIZABLE = "dubbo.application.check-serializable";
 
     String ENABLE_NATIVE_JAVA_GENERIC_SERIALIZE = "dubbo.security.serialize.generic.native-java-enable";
 
@@ -399,4 +413,10 @@ public interface CommonConstants {
     String ON_DISCONNECT_KEY = "ondisconnect";
 
     String TOKEN = "token";
+
+    String DUBBO_MONITOR_ADDRESS = "dubbo.monitor.address";
+
+    String DISPATHER = "dispather";
+
+    String SERVICE_NAME_MAPPING_KEY = "service-name-mapping";
 }
